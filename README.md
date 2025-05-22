@@ -1,4 +1,4 @@
-#Alternativa
+#Ejecucción
 Desde una terminal con bash ejecutar
 `bash ejecutar.sh`
 
