@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simulador de Paginación</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+     <header class="app-header">
+        <h1>Simulador de Paginación</h1>
+      </header>
+    <div class="app-container">
+      <section class="controls-section">
+        <div class="control-card">
+          <h2><span class="icon">📁</span> Cargar instrucciones desde archivo</h2>
+          <div class="input-group">
+            <label for="archivoInput">Seleccionar archivo:</label>
+            <input class="file-input" type="file" id="archivoInput" accept=".txt" />
+          </div>
+          <button class="btn-primary" onclick="cargarArchivo()">Cargar archivo de instrucciones</button>
+          <div class="output-preview" id="resultadoOutput"></div>
+          
+        </div>
+
+        <div class="control-card">
+          <h2><span class="icon">⚙️</span> Generar instrucciones aleatorias</h2>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="inputP">Cantidad de procesos:</label>
+              <input class="numeric-input" type="number" id="inputP" value="10" min="1" />
+            </div>
+            <div class="input-group">
+              <label for="semillaRandom">Semilla random:</label>
+              <input class="numeric-input" type="number" id="semillaRandom" />
+            </div>
+            <div class="input-group">
+              <label for="cantidadN">Cantidad de instrucciones:</label>
+              <input class="numeric-input" type="number" id="cantidadN" />
+            </div>
+          </div>
+          <button class="btn-primary" id="generarBtn">Generar instrucciones aleatorias</button>
+        </div>
+
+        <div class="control-card">
+          <h2><span class="icon">📊</span> Generar tabla de marcos</h2>
+          <div id="algoritmosContainer"></div>
+          <div class="input-group">
+            <label for="inputMarcos">Cantidad de marcos:</label>
+            <input class="numeric-input" type="number" id="inputMarcos" value="100" readonly />
+          </div>
+          <button class="btn-primary" onclick="generarTablas()">Generar tabla</button>
+          <div id="warning" class="warning-message"></div>
+        </div>
+      </section>
+
+       </div>
+      <div id="contenedor-tablas">
+        <div id="tablaRam"></div>
+        <div id="tablaPaginas"></div>
+      </div>
+    </div>
+
+    <script type="module" src="js/random/seedRandom.js"></script>
+    <script type="module" src="js/random/randomGenerator.js"></script>
+    <script type="module" src="js/receiveNumbers.js"></script>
+  </body>
+</html>
